@@ -1,4 +1,4 @@
-**Testing using Jasmine development framework **
+**Testing using Jasmine development framework**
 
 *An Udacity FEND project*
 
