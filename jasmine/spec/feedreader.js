@@ -55,14 +55,21 @@ $(function() {
      * visibility when the menu icon is clicked
       */
          describe('The menu', function(){
-           it('menu element is  hidden by default', function(){
-             $(".menu-icon-link").click(); // to check the click triggered expectation
-             expect($('body').hasClass("menu-hidden")).not.toBe(true);
-           });
+           //Defining variables neded for hiding and showing of the menu
+           var body = document.body;
+           var menuIcon = document.querySelector(".menu-icon-link");
 
+           // Check the menu is hidden initially
+           it("body has ther 'menu-hidden' initially", function() {
+           expect(body.className).toContain("menu-hidden");
+          });
+          
+          //Check the menu on clicking the icon
           it('icon menu changes visibility on click', function(){
-            $(".menu-icon-link").click(); // to check the click triggered expectation
-            expect($('body').hasClass("menu-hidden")).toBe(true);
+            menuIcon.click();
+            expect(body.className).not.toContain("menu-hidden");
+            menuIcon.click();
+            expect(body.className).toContain("menu-hidden");
             });
          });
 
